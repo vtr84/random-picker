@@ -1,0 +1,35 @@
+body {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+h1, p {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.icon {
+    font-size: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title-card {
+    font-size: 20px;
+}
+
+#final-result {
+    background-color: aquamarine;
+}
+
+#presenters-list {
+    background-color: bisque;
+}
+
+#past-presenters {
+    background-color: burlywood;
+}
