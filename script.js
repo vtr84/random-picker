@@ -5,7 +5,7 @@
 const allPresenters = ['Alexej', 'Guilherme', 'Lorianne', 'Natalie', 'Pallavi', 'Peter', 'Pilar', 'Salvatore', 'Sasmitha', 'Victor']
 
 // Keep track of past presenters - missing the type of presentation (Kahoot/TechWatch)
-const pastPresenters = ['Victor', 'Salvatore', 'Alexej']
+const pastPresenters = [9, 7, 0]
 
 // Create an array to keep the new presenters for next week
 let newPresenters = []
@@ -15,24 +15,28 @@ let newPresenters = []
 // Event Listener for the button to call the randomize funtion
 
 // Append all registered presenters to the page
-let presentersList = document.getElementById('presenters-list')
+const presentersList = document.getElementById('presenters-list')
 // cycle through the presenters and create a div for each participant and append it
 for (let i=0; i < allPresenters.length; i++){
-    let presenterDiv = document.createElement('div')
+    const presenterDiv = document.createElement('div')
     presenterDiv.innerHTML = `<img src="resources/${i}.png"><p>${allPresenters[i]}</p>`
+    // Apply the locked class to the last 3 past presenters since they won't be picked 
+    for (let ii=0; ii < pastPresenters.length; ii++){
+        if (i===pastPresenters[ii]){
+            presenterDiv.classList.add('locked')
+        }
+    }
     presentersList.appendChild(presenterDiv)
 }
 
 // Append the past presenters to the page
-let presentersListPast = document.getElementById('past-presenters')
+const presentersListPast = document.getElementById('past-presenters')
 // cycle through the presenters and create a div for each participant and append it
 for (let i=0; i < pastPresenters.length; i++){
-    let presenterDiv = document.createElement('div')
-    presenterDiv.innerHTML = `<!--<img src="resources/${i}.png">--><p>${pastPresenters[i]}</p>`
-    //img commented out because it needs to be an object to get the correct file
+    const presenterDiv = document.createElement('div')
+    presenterDiv.innerHTML = `<img src="resources/${pastPresenters[i]}.png"><p>${allPresenters[pastPresenters[i]]}</p>`
     presentersListPast.appendChild(presenterDiv)
 }
 
 // Apply the style to the new picks
 
-// Apply the style to the last 3 past presenters to avoid being picked
