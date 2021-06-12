@@ -51,7 +51,7 @@ function revealResult (presenter){
     document.getElementById('r-p'+picks).innerText = allPresenters[presenter]
     // set the locked info on all presenters
     // change the avatar
-    document.getElementById('presenter'+presenter).classList.add('locked')
+    document.getElementById('presenter'+presenter).className = 'locked'
 }
 
 // ADD ALL THE INFO SAVED AS DATA TO THE WEBPAGE - PRESENTERS AND PAST PRESENTERS
@@ -65,7 +65,7 @@ for (let i=0; i < allPresenters.length; i++){
     // Apply the locked class to the last 3 past presenters already saved
     for (let ii=0; ii < pastPresenters.length; ii++){
         if (i===pastPresenters[ii]){
-            presenterDiv.classList.add('locked')
+            presenterDiv.className = 'locked'
         }
     }
     presentersList.appendChild(presenterDiv)
