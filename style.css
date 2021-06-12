@@ -2,10 +2,10 @@ body {
     padding: 0px;
     border: 0px;
     margin: 0px;
+    background-color: rgb(48, 46, 46);
 }
 
 h1, p {
-    max-width: 680px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -20,6 +20,11 @@ h1, p {
 
 .title-card {
     font-size: 20px;
+    background-color: black;
+    color: lightgray;
+    font-family: monospace;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 #final-result {
@@ -27,9 +32,21 @@ h1, p {
 }
 
 #presenters-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     background-color: bisque;
+    padding: 20px;
 }
 
 #past-presenters {
     background-color: burlywood;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.locked {
+    background-color: grey;
 }

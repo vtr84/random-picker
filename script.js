@@ -15,11 +15,23 @@ let newPresenters = []
 // Event Listener for the button to call the randomize funtion
 
 // Append all registered presenters to the page
-const finalResult = document.getElementById('presenters-list')
+let presentersList = document.getElementById('presenters-list')
 // cycle through the presenters and create a div for each participant and append it
-
+for (let i=0; i < allPresenters.length; i++){
+    let presenterDiv = document.createElement('div')
+    presenterDiv.innerHTML = `<img src="resources/${i}.png"><p>${allPresenters[i]}</p>`
+    presentersList.appendChild(presenterDiv)
+}
 
 // Append the past presenters to the page
+let presentersListPast = document.getElementById('past-presenters')
+// cycle through the presenters and create a div for each participant and append it
+for (let i=0; i < pastPresenters.length; i++){
+    let presenterDiv = document.createElement('div')
+    presenterDiv.innerHTML = `<!--<img src="resources/${i}.png">--><p>${pastPresenters[i]}</p>`
+    //img commented out because it needs to be an object to get the correct file
+    presentersListPast.appendChild(presenterDiv)
+}
 
 // Apply the style to the new picks
 
