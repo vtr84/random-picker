@@ -2,7 +2,8 @@ body {
     padding: 0px;
     border: 0px;
     margin: 0px;
-    background-color: rgb(48, 46, 46);
+    background-color: #0d1117;
+    font-family: monospace;
 }
 
 h1, p {
@@ -10,6 +11,17 @@ h1, p {
     margin-right: auto;
     padding: 10px;
     text-align: center;
+}
+
+h1 {
+    color: #c9d1d9;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 .icon {
@@ -21,30 +33,21 @@ h1, p {
 .title-card {
     font-size: 20px;
     background-color: black;
-    color: lightgray;
-    font-family: monospace;
+    color: #c9d1d9;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
 #final-result {
-    background-color: aquamarine;
+    background-color: teal;
 }
 
 #presenters-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: bisque;
-    padding: 20px;
+    background-color: darksalmon;
 }
 
 #past-presenters {
-    background-color: burlywood;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    background-color: grey;
 }
 
 .locked {
