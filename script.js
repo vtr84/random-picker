@@ -27,6 +27,7 @@ function randomizePresenters (){
 
 // Event Listener for the button to call the randomize funtion
 const rndButton = document.getElementById('start')
+const msgTitle = document.getElementById('msg-title')
 
 rndButton.addEventListener('click', function(){
     //each time the button is pushed, we first check if we can proceed or if we already went 3x
@@ -34,12 +35,18 @@ rndButton.addEventListener('click', function(){
         const rndPresenter = randomizePresenters();
         excludedPresenters.push(rndPresenter)
         picks++
-        //console.log(excludedPresenters)
+        console.log(excludedPresenters, picks)
         //print the result each time
         revealResult(rndPresenter)
+        if (picks === 3) {
+            // when the third pick is made, change the picks to -1 and change style to reset button
+            rndButton.className = 'icon reset'
+            rndButton.innerHTML = '♻️'
+            msgTitle.innerText = 'Congratulation to the presenters! You can start over if you\'d like!'
+        }
     } else {
-        // or alert to refresh the page and restart
-        alert ('🤖\nYou have already picked 3 presenters, refresh the page to restart!')
+        //call the function to clear
+        resetPicks()
     }
 })
 // Apply the style and add the correct data to the new picks
@@ -63,8 +70,8 @@ for (let i=0; i < allPresenters.length; i++){
     presenterDiv.id = 'presenter'+i
     presenterDiv.innerHTML = `<img src="resources/${i}.png"><p>${allPresenters[i]}</p>`
     // Apply the locked class to the last 3 past presenters already saved
-    for (let ii=0; ii < pastPresenters.length; ii++){
-        if (i===pastPresenters[ii]){
+    for (let k=0; k < pastPresenters.length; k++){
+        if (i===pastPresenters[k]){
             presenterDiv.className = 'locked'
         }
     }
@@ -77,4 +84,25 @@ for (let i=0; i < pastPresenters.length; i++){
     const presenterDiv = document.createElement('div')
     presenterDiv.innerHTML = `<img src="resources/${pastPresenters[i]}.png"><p>${allPresenters[pastPresenters[i]]}</p>`
     presentersListPast.appendChild(presenterDiv)
+}
+
+// clear the result to start over
+function resetPicks (){
+    // rest pick count
+    picks = 0
+    // select last 3 saved presenters picked
+    let clearPresenters = 0
+    for (let i =0, k=1 ; i<3; i ++, k++){
+        clearPresenters = excludedPresenters[excludedPresenters.length-1]
+        excludedPresenters.pop()
+        k = i+1
+        // change the avatar, change the name and presenter style
+        console.log(excludedPresenters, clearPresenters, i, k)
+        document.getElementById('r-img'+k.toString()).src = 'resources/n.png'
+        document.getElementById('r-p'+k).innerText = '?'
+        document.getElementById('presenter'+clearPresenters).className = ''
+    }
+    rndButton.className = 'icon'
+    rndButton.innerHTML = '🎲'
+    msgTitle.innerText = 'Roll the dice'
 }

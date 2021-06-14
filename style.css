@@ -24,6 +24,15 @@ section {
     padding: 20px;
 }
 
+button {
+    width: 300px;
+    background-color: teal;
+}
+
+.reset {
+    background-color: darksalmon;
+}
+
 .icon {
     font-size: 80px;
     margin-top: 10px;
