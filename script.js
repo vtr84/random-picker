@@ -4,7 +4,7 @@
 // Define all presenters
 const allPresenters = ['Alexej', 'Guilherme', 'Lorianne', 'Natalie', 'Pallavi', 'Peter', 'Pilar', 'Salvatore', 'Sasmitha', 'Victor']
 // Keep track of past presenters - missing the type of presentation (Kahoot/TechWatch)
-const pastPresenters = [9, 7, 0]
+const pastPresenters = [9, 7, 0, 2, 1, 4]
 
 // Create an array to keep the new presenters for next week so they can be excluded for the second and third pick
 let excludedPresenters = pastPresenters
